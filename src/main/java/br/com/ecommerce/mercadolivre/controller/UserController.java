@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/users")
 public class UserController {
 
     @Autowired private UserRepository userRepository;
