@@ -21,6 +21,10 @@ public class User {
     @Column(nullable = false)
     private Instant acesso;
 
+    @Deprecated
+    public User() {
+    }
+
     public User(String login, String senha) {
         this.login = login;
         this.senha = senha;
