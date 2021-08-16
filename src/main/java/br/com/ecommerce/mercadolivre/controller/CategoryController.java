@@ -26,10 +26,9 @@ public class CategoryController {
 
     @PostMapping
     @Transactional
-    public String saveCategory(@RequestBody @Valid CategoryRequest categoryRequest){
+    public ResponseEntity<?> saveCategory(@RequestBody @Valid CategoryRequest categoryRequest){
         Category category = categoryRequest.toModel(categoryRepository);
         categoryRepository.save(category);
-        return category.toString();
-//        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().build();
     }
 }
