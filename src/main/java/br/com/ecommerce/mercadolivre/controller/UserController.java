@@ -14,7 +14,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/api/login")
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);

@@ -2,6 +2,7 @@ package br.com.ecommerce.mercadolivre.controller.request;
 
 import br.com.ecommerce.mercadolivre.model.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -25,9 +26,13 @@ public class UserRequest {
     public UserRequest() {
     }
 
-    public User toModel(){
+    public User toModel() {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return new User(this.login, encoder.encode(this.senha));
+    }
+
+    public UsernamePasswordAuthenticationToken convert() {
+        return new UsernamePasswordAuthenticationToken(login, senha);
     }
 
     public String getLogin() {
@@ -36,5 +41,14 @@ public class UserRequest {
 
     public String getSenha() {
         return senha;
+    }
+
+
+    @Override
+    public String toString() {
+        return "UserRequest{" +
+                "login='" + login + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }

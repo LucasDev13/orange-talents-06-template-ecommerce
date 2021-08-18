@@ -1,6 +1,5 @@
 package br.com.ecommerce.mercadolivre.controller.request;
 
-import br.com.ecommerce.mercadolivre.config.security.ValidationException;
 import br.com.ecommerce.mercadolivre.config.validation.UniqueValue;
 import br.com.ecommerce.mercadolivre.model.Category;
 import br.com.ecommerce.mercadolivre.repository.CategoryRepository;
@@ -33,14 +32,6 @@ public class CategoryRequest {
 
     public Long getIdCategoryMother() {
         return idCategoryMother;
-    }
-
-    @Override
-    public String toString() {
-        return "CategoryRequest{" +
-                "nameCategory='" + nameCategory + '\'' +
-                ", idCategoryMother=" + idCategoryMother +
-                '}';
     }
 
     public Category toModel(CategoryRepository repository) {

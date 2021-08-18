@@ -14,7 +14,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/category")
+@RequestMapping(value = "/api/category")
 public class CategoryController {
 
     private CategoryRepository categoryRepository;
